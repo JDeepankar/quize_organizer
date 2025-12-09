@@ -23,7 +23,7 @@ public class QuizServiceImpl implements  QuizService {
 
     private final QuizRepository quizRepository;
 
-
+    // to create a quiz
     @Override
     @Transactional
     public QuizResponseDTO createQuiz(QuizCreateRequestDTO quizCreateRequestDTO) {
@@ -63,6 +63,7 @@ public class QuizServiceImpl implements  QuizService {
         return mapper(saved);
     }
 
+    //to get the quiz
     @Override
     public QuizResponseDTO getQuiz(Long quizId) {
 
@@ -70,6 +71,7 @@ public class QuizServiceImpl implements  QuizService {
         return mapper(quiz);
     }
 
+    //to submit the quiz
     @Override
     public QuizResultResponseDTO submitQuiz(Long quizId, SubmitQuizRequestDTO submitQuizRequestDTO) {
         Quiz quiz = quizRepository.findById(quizId).orElseThrow(() -> new IllegalArgumentException("Quize not found with id - "+ quizId));
