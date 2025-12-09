@@ -1,6 +1,7 @@
 package com.app.quiz_organiser.dto;
 
 
+import com.app.quiz_organiser.entity.Question;
 import com.app.quiz_organiser.entity.QuestionType;
 import lombok.Builder;
 import lombok.Data;
@@ -13,6 +14,7 @@ public class QuizResponseDTO {
 
     private Long id;
     private String title;
+    private List<QuestionDTO> questions;
 
     @Data
     @Builder
